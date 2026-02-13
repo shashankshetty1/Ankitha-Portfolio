@@ -75,7 +75,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="mb-6 inline-block py-1 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
       >
-        <span className="text-sm font-medium text-white/80">Data Scientist & AI Researcher</span>
+        <span className="text-sm font-medium text-white/80">Aspairing Data Scientist</span>
       </motion.div>
 
       <motion.h1
