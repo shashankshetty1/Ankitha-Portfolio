@@ -1,13 +1,58 @@
+import { useState } from "react";
 import Section from "./Section";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useMounted } from "@/hooks/use-mounted";
+import { toast } from "sonner";
 
 export default function Contact() {
   const mounted = useMounted();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success(data.message);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error(data.message || "Failed to send message.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   return (
     <Section id="contact" title="Get In Touch" className="bg-white/5 pb-32">
@@ -104,21 +149,55 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="p-8 rounded-3xl bg-black/40 border border-white/10 backdrop-blur-md"
           >
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-white/80">Name</label>
-                <Input placeholder="Your Name" className="bg-white/5 border-white/10 text-white placeholder:text-white/20" />
+                <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/20"
+                  disabled={isSubmitting}
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-white/80">Email</label>
-                <Input type="email" placeholder="Your Email" className="bg-white/5 border-white/10 text-white placeholder:text-white/20" />
+                <Input
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/20"
+                  disabled={isSubmitting}
+                />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-white/80">Message</label>
-                <Textarea placeholder="Your Message" className="min-h-[120px] bg-white/5 border-white/10 text-white placeholder:text-white/20" />
+                <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your Message"
+                  className="min-h-[120px] bg-white/5 border-white/10 text-white placeholder:text-white/20"
+                  disabled={isSubmitting}
+                />
               </div>
-              <Button className="w-full gap-2 py-6 text-lg font-bold">
-                Send Message <Send className="w-4 h-4" />
+              <Button
+                type="submit"
+                className="w-full gap-2 py-6 text-lg font-bold"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    Sending <Loader2 className="w-4 h-4 animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Send Message <Send className="w-4 h-4" />
+                  </>
+                )}
               </Button>
             </form>
           </motion.div>

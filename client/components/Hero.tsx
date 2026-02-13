@@ -22,32 +22,51 @@ export default function Hero() {
       >
         {/* Floating Animation Wrapper */}
         <motion.div
+          whileHover={{
+            rotateX: 10,
+            rotateY: 10,
+            scale: 1.05,
+            transition: { duration: 0.3 }
+          }}
           animate={{
-            y: [0, -10, 0],
+            y: [0, -15, 0],
           }}
           transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
+            y: {
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
           }}
-          className="relative z-10"
+          className="relative z-10 perspective-1000"
         >
-          {/* Glowing Background Ring */}
-          <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl animate-pulse" />
+          {/* Glowing Background Ring / Soft Pulse */}
+          <motion.div
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute inset-0 rounded-full bg-primary/30 blur-3xl"
+          />
 
           {/* Image Container */}
-          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-tr from-primary/50 via-white/10 to-primary/50 backdrop-blur-sm border border-white/10 overflow-hidden shadow-2xl shadow-primary/20">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full p-1.5 bg-gradient-to-tr from-primary via-white/20 to-primary/60 backdrop-blur-md border border-white/20 overflow-hidden shadow-[0_0_50px_rgba(var(--primary),0.3)] transition-shadow duration-500 hover:shadow-[0_0_70px_rgba(var(--primary),0.5)]">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F8f8c427692d64d0eb6a4791a13c7e91d%2Fd0490fc3ba904f2caf92e0d34956de1f?format=webp&width=800&height=1200"
               alt="Ankitha Professional Photo"
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-110"
             />
           </div>
         </motion.div>
 
         {/* Decorative Tech Orbitals */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-48 md:h-48 border border-primary/20 rounded-full animate-[spin_10s_linear_infinite]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 border border-white/5 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 md:w-72 md:h-72 border border-primary/20 rounded-full animate-[spin_12s_linear_infinite]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 md:w-68 md:h-68 border border-white/10 rounded-full animate-[spin_18s_linear_infinite_reverse]" />
       </motion.div>
 
       <motion.div
