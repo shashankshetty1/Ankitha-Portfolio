@@ -32,7 +32,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Email</p>
-                  <p className="text-white">ankitha@example.com</p>
+                  <p className="text-white">ankitharadhakrishna9@gmail.com</p>
                 </div>
               </div>
 
@@ -71,7 +71,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Email</p>
-                  <p className="text-white">ankitha@example.com</p>
+                  <p className="text-white">ankitharadhakrishna9@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">

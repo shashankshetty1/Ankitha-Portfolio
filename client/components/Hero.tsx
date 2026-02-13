@@ -90,13 +90,13 @@ export default function Hero() {
           </a>
         </Button>
         <div className="flex items-center gap-3 ml-2">
-          <a href="#" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
+          <a href="mailto:ankitharadhakrishna9@gmail.com" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
             <Mail className="w-5 h-5" />
           </a>
-          <a href="#" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
+          <a href="https://www.linkedin.com/in/ankitha-32693223a/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="#" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
+          <a href="https://github.com/ankithaaa10" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
             <Github className="w-5 h-5" />
           </a>
         </div>
