@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useMounted } from "@/hooks/use-mounted";
 
 export default function Hero() {
+  const mounted = useMounted();
+
+  if (!mounted) return <div className="h-screen" />;
+
   return (
     <div className="h-screen flex flex-col items-center justify-center text-center px-6">
       <motion.div

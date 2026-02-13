@@ -8,14 +8,18 @@ const videos = [
 
 export default function VideoBackground() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true);
     const timer = setInterval(() => {
       setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
     }, 10000); // Transition every 10 seconds
 
     return () => clearInterval(timer);
   }, []);
+
+  if (!hasMounted) return <div className="fixed inset-0 z-[-1] bg-black" />;
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">

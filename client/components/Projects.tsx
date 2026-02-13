@@ -1,6 +1,7 @@
 import Section from "./Section";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { useMounted } from "@/hooks/use-mounted";
 
 const projects = [
   {
@@ -27,45 +28,76 @@ const projects = [
 ];
 
 export default function Projects() {
+  const mounted = useMounted();
+
   return (
     <Section id="projects" title="Featured Projects">
       <div className="grid md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative flex flex-col p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 backdrop-blur-sm overflow-hidden"
-          >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            
-            <div className="flex justify-between items-start mb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                {project.category}
-              </span>
-              <a href={project.link} className="p-2 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors">
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
+          mounted ? (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative flex flex-col p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 backdrop-blur-sm overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
-              {project.title}
-            </h3>
-
-            <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
-              {project.description}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/40">
-                  {tag}
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                  {project.category}
                 </span>
-              ))}
+                <a href={project.link} className="p-2 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors">
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                {project.title}
+              </h3>
+
+              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/40">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <div
+              key={project.title}
+              className="group relative flex flex-col p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden"
+            >
+              <div className="flex justify-between items-start mb-4">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                  {project.category}
+                </span>
+                <a href={project.link} className="p-2 rounded-full bg-white/5 transition-colors">
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                {project.title}
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/40">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </motion.div>
+          )
         ))}
       </div>
     </Section>
