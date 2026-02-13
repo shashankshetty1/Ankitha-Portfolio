@@ -11,6 +11,46 @@ export default function Hero() {
   return (
     <div className="h-screen flex flex-col items-center justify-center text-center px-6">
       <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+          delay: 0.1
+        }}
+        className="relative mb-8"
+      >
+        {/* Floating Animation Wrapper */}
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="relative z-10"
+        >
+          {/* Glowing Background Ring */}
+          <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl animate-pulse" />
+
+          {/* Image Container */}
+          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-tr from-primary/50 via-white/10 to-primary/50 backdrop-blur-sm border border-white/10 overflow-hidden shadow-2xl shadow-primary/20">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F8f8c427692d64d0eb6a4791a13c7e91d%2Fd0490fc3ba904f2caf92e0d34956de1f?format=webp&width=800&height=1200"
+              alt="Ankitha Professional Photo"
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+        </motion.div>
+
+        {/* Decorative Tech Orbitals */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-48 md:h-48 border border-primary/20 rounded-full animate-[spin_10s_linear_infinite]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 md:w-44 md:h-44 border border-white/5 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+      </motion.div>
+
+      <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
