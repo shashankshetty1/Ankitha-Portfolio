@@ -19,7 +19,7 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
-  app.post("/api/contact", handleContact);
+  app.post("/contact", handleContact);  
 
   return app;
 }
