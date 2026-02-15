@@ -55,7 +55,7 @@ export default function Hero() {
           />
 
           {/* Image Container */}
-          <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full p-1.5 bg-gradient-to-tr from-primary via-white/20 to-primary/60 backdrop-blur-md border border-white/20 overflow-hidden shadow-[0_0_50px_rgba(var(--primary),0.3)] transition-shadow duration-500 hover:shadow-[0_0_70px_rgba(var(--primary),0.5)]">
+<div className="relative w-36 h-36 md:w-48 md:h-48 rounded-full p-1.5 bg-gradient-to-tr from-primary via-white/20 to-primary/60 backdrop-blur-md border border-white/20 overflow-hidden shadow-[0_0_50px_rgba(var(--primary),0.3)] transition-shadow duration-500 hover:shadow-[0_0_70px_rgba(var(--primary),0.5)]">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F8f8c427692d64d0eb6a4791a13c7e91d%2Fd0490fc3ba904f2caf92e0d34956de1f?format=webp&width=800&height=1200"
               alt="Ankitha Professional Photo"
