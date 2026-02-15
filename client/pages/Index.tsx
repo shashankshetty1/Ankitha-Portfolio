@@ -10,7 +10,7 @@ import Contact from "@/components/Contact";
 
 export default function Index() {
   return (
-    <div className="relative min-h-screen text-white font-sans selection:bg-primary selection:text-white">
+    <div className="relative min-h-screen text-foreground font-sans selection:bg-primary selection:text-foreground">
       <VideoBackground />
       <Navbar />
       
@@ -24,8 +24,8 @@ export default function Index() {
         <Contact />
       </main>
 
-      <footer className="py-8 px-6 text-center border-t border-white/5 bg-black/40 backdrop-blur-md">
-        <p className="text-white/40 text-sm">
+      <footer className="py-8 px-6 text-center border-t border-border bg-background/40 backdrop-blur-md">
+        <p className="text-muted-foreground text-sm">
           © {new Date().getFullYear()} ANKITHA. Built with passion & data.
         </p>
       </footer>

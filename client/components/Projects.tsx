@@ -41,7 +41,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 backdrop-blur-sm overflow-hidden"
+              className="group relative flex flex-col p-6 rounded-3xl bg-accent/50 border border-border hover:border-primary/50 transition-all duration-300 backdrop-blur-sm overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -49,22 +49,22 @@ export default function Projects() {
                 <span className="text-xs font-bold uppercase tracking-wider text-primary">
                   {project.category}
                 </span>
-                <a href={project.link} className="p-2 rounded-full bg-white/5 hover:bg-primary hover:text-white transition-colors">
+                <a href={project.link} className="p-2 rounded-full bg-accent/50 hover:bg-primary hover:text-foreground transition-colors">
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
 
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
                 {project.description}
               </p>
 
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/40">
+                  <span key={tag} className="px-3 py-1 rounded-full bg-accent/50 border border-border text-[10px] font-semibold text-muted-foreground">
                     {tag}
                   </span>
                 ))}
@@ -73,25 +73,25 @@ export default function Projects() {
           ) : (
             <div
               key={project.title}
-              className="group relative flex flex-col p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden"
+              className="group relative flex flex-col p-6 rounded-3xl bg-accent/50 border border-border backdrop-blur-sm overflow-hidden"
             >
               <div className="flex justify-between items-start mb-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-primary">
                   {project.category}
                 </span>
-                <a href={project.link} className="p-2 rounded-full bg-white/5 transition-colors">
+                <a href={project.link} className="p-2 rounded-full bg-accent/50 transition-colors">
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
+              <h3 className="text-xl font-bold text-foreground mb-3">
                 {project.title}
               </h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-semibold text-white/40">
+                  <span key={tag} className="px-3 py-1 rounded-full bg-accent/50 border border-border text-[10px] font-semibold text-muted-foreground">
                     {tag}
                   </span>
                 ))}

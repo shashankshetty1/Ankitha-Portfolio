@@ -55,7 +55,7 @@ export default function Contact() {
   };
 
   return (
-    <Section id="contact" title="Get In Touch" className="bg-white/5 pb-32">
+    <Section id="contact" title="Get In Touch" className="bg-accent/50 pb-32">
       <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         {mounted ? (
           <motion.div
@@ -64,8 +64,8 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-            <p className="text-white/60 mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
+            <p className="text-muted-foreground mb-8">
               I am always open to discussing new projects, creative ideas or
               opportunities to be part of your visions.
             </p>
@@ -76,8 +76,8 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Email</p>
-                  <p className="text-white">ankitharadhakrishna9@gmail.com</p>
+                  <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Email</p>
+                  <p className="text-foreground">ankitharadhakrishna9@gmail.com</p>
                 </div>
               </div>
 
@@ -86,8 +86,8 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Phone</p>
-                  <p className="text-white">+91 8970141625</p>
+                  <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Phone</p>
+                  <p className="text-foreground">+91 8970141625</p>
                 </div>
               </div>
 
@@ -96,16 +96,16 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Location</p>
-                  <p className="text-white">Manipal, Karnataka, India</p>
+                  <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Location</p>
+                  <p className="text-foreground">Manipal, Karnataka, India</p>
                 </div>
               </div>
             </div>
           </motion.div>
         ) : (
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-            <p className="text-white/60 mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
+            <p className="text-muted-foreground mb-8">
               I am always open to discussing new projects, creative ideas or
               opportunities to be part of your visions.
             </p>
@@ -115,8 +115,8 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Email</p>
-                  <p className="text-white">ankitharadhakrishna9@gmail.com</p>
+                  <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Email</p>
+                  <p className="text-foreground">ankitharadhakrishna9@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -124,8 +124,8 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Phone</p>
-                  <p className="text-white">+91 8970141625</p>
+                  <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Phone</p>
+                  <p className="text-foreground">+91 8970141625</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -133,8 +133,8 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 uppercase font-bold tracking-wider">Location</p>
-                  <p className="text-white">Manipal, Karnataka, India</p>
+                  <p className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Location</p>
+                  <p className="text-foreground">Manipal, Karnataka, India</p>
                 </div>
               </div>
             </div>
@@ -147,40 +147,40 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 rounded-3xl bg-black/40 border border-white/10 backdrop-blur-md"
+            className="p-8 rounded-3xl bg-black/40 border border-border backdrop-blur-md"
           >
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Name</label>
+                <label className="text-sm font-medium text-foreground/80">Name</label>
                 <Input
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/20"
+                  className="bg-accent/50 border-border text-foreground placeholder:text-muted-foreground/30"
                   disabled={isSubmitting}
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Email</label>
+                <label className="text-sm font-medium text-foreground/80">Email</label>
                 <Input
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/20"
+                  className="bg-accent/50 border-border text-foreground placeholder:text-muted-foreground/30"
                   disabled={isSubmitting}
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Message</label>
+                <label className="text-sm font-medium text-foreground/80">Message</label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your Message"
-                  className="min-h-[120px] bg-white/5 border-white/10 text-white placeholder:text-white/20"
+                  className="min-h-[120px] bg-accent/50 border-border text-foreground placeholder:text-muted-foreground/30"
                   disabled={isSubmitting}
                 />
               </div>
@@ -202,19 +202,19 @@ export default function Contact() {
             </form>
           </motion.div>
         ) : (
-          <div className="p-8 rounded-3xl bg-black/40 border border-white/10 backdrop-blur-md">
+          <div className="p-8 rounded-3xl bg-black/40 border border-border backdrop-blur-md">
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Name</label>
-                <Input placeholder="Your Name" className="bg-white/5 border-white/10 text-white placeholder:text-white/20" />
+                <label className="text-sm font-medium text-foreground/80">Name</label>
+                <Input placeholder="Your Name" className="bg-accent/50 border-border text-foreground placeholder:text-muted-foreground/30" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Email</label>
-                <Input type="email" placeholder="Your Email" className="bg-white/5 border-white/10 text-white placeholder:text-white/20" />
+                <label className="text-sm font-medium text-foreground/80">Email</label>
+                <Input type="email" placeholder="Your Email" className="bg-accent/50 border-border text-foreground placeholder:text-muted-foreground/30" />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-medium text-white/80">Message</label>
-                <Textarea placeholder="Your Message" className="min-h-[120px] bg-white/5 border-white/10 text-white placeholder:text-white/20" />
+                <label className="text-sm font-medium text-foreground/80">Message</label>
+                <Textarea placeholder="Your Message" className="min-h-[120px] bg-accent/50 border-border text-foreground placeholder:text-muted-foreground/30" />
               </div>
               <Button className="w-full gap-2 py-6 text-lg font-bold">
                 Send Message <Send className="w-4 h-4" />

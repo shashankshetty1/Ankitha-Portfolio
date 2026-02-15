@@ -35,24 +35,24 @@ export default function Achievements() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center group"
+              className="p-6 rounded-2xl bg-accent/50 border border-border text-center group"
             >
               <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4 group-hover:scale-110 transition-transform">
                 <item.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-sm text-white/50">{item.desc}</p>
+              <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
             </motion.div>
           ) : (
             <div
               key={item.title}
-              className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center"
+              className="p-6 rounded-2xl bg-accent/50 border border-border text-center"
             >
               <div className="inline-flex p-3 rounded-xl bg-primary/10 text-primary mb-4">
                 <item.icon className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-sm text-white/50">{item.desc}</p>
+              <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
             </div>
           )
         ))}

@@ -55,7 +55,7 @@ export default function Hero() {
           />
 
           {/* Image Container */}
-<div className="relative w-36 h-36 md:w-48 md:h-48 rounded-full p-1.5 bg-gradient-to-tr from-primary via-white/20 to-primary/60 backdrop-blur-md border border-white/20 overflow-hidden shadow-[0_0_50px_rgba(var(--primary),0.3)] transition-shadow duration-500 hover:shadow-[0_0_70px_rgba(var(--primary),0.5)]">
+          <div className="relative w-36 h-36 md:w-48 md:h-48 rounded-full p-1.5 bg-gradient-to-tr from-primary via-white/20 to-primary/60 backdrop-blur-md border border-border overflow-hidden shadow-[0_0_50px_rgba(var(--primary),0.3)] transition-shadow duration-500 hover:shadow-[0_0_70px_rgba(var(--primary),0.5)]">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F8f8c427692d64d0eb6a4791a13c7e91d%2Fd0490fc3ba904f2caf92e0d34956de1f?format=webp&width=800&height=1200"
               alt="Ankitha Professional Photo"
@@ -66,23 +66,23 @@ export default function Hero() {
 
         {/* Decorative Tech Orbitals */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 md:w-72 md:h-72 border border-primary/20 rounded-full animate-[spin_12s_linear_infinite]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 md:w-68 md:h-68 border border-white/10 rounded-full animate-[spin_18s_linear_infinite_reverse]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 md:w-68 md:h-68 border border-border rounded-full animate-[spin_18s_linear_infinite_reverse]" />
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-6 inline-block py-1 px-4 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
+        className="mb-6 inline-block py-1 px-4 rounded-full bg-accent/50 border border-border backdrop-blur-sm"
       >
-        <span className="text-sm font-medium text-white/80">Aspairing Data Scientist</span>
+        <span className="text-sm font-medium text-foreground/80">Aspairing Data Scientist</span>
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-5xl md:text-8xl font-black text-white tracking-tight mb-6"
+        className="text-5xl md:text-8xl font-black text-foreground tracking-tight mb-6"
       >
         ANKITHA
       </motion.h1>
@@ -91,7 +91,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-lg md:text-xl text-white/60 max-w-2xl mb-10"
+        className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10"
       >
         Transforming complex data into actionable insights through Machine Learning, 
         Deep Learning, and Statistical Modeling.
@@ -109,13 +109,13 @@ export default function Hero() {
           </a>
         </Button>
         <div className="flex items-center gap-3 ml-2">
-          <a href="mailto:ankitharadhakrishna9@gmail.com" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
+          <a href="mailto:ankitharadhakrishna9@gmail.com" className="p-2 rounded-full bg-accent/50 border border-border hover:bg-accent transition-colors text-foreground">
             <Mail className="w-5 h-5" />
           </a>
-          <a href="https://www.linkedin.com/in/ankitha-32693223a/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
+          <a href="https://www.linkedin.com/in/ankitha-32693223a/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-accent/50 border border-border hover:bg-accent transition-colors text-foreground">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="https://github.com/ankithaaa10" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white">
+          <a href="https://github.com/ankithaaa10" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-accent/50 border border-border hover:bg-accent transition-colors text-foreground">
             <Github className="w-5 h-5" />
           </a>
         </div>
